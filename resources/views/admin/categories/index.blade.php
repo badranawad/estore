@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 @section('content')
     <div class="py-5">
+        <a class="btn btn-secondary" href="{{url('categories/create')}}">أضف صنف جديد</a>
+
         <table class="table">
             <thead>
                 <tr>

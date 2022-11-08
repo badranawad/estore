@@ -21,11 +21,12 @@
         </div>
         <div class="mb-3">
             <label for="descriptionFormControlTextarea" class="form-label"> اختر الصنف </label>
-            <select class="form-control" name="category" id="category">
+            <select class="form-select" name="category" id="category">
                 <option value="#"></option>
-                <option value="1">ملابس</option>
-                <option value="2">أحذية</option>
-                <option value="3">اكسسوارات</option>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+
             </select>
         </div>
         <div class="mb-3">

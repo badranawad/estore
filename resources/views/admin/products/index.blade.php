@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="py-5">
+        <a class="btn btn-secondary" href="{{url('products/create')}}">أضف منتج جديد</a>
         <table class="table">
             <thead>
                 <tr>
@@ -17,7 +18,7 @@
                     <tr>
                         <th scope="row">1</th>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->category_id}}</td>
+                        <td>{{$categories[$product->category_id-1]->name}}</td>
                         <td>{{$product->price}}</td>
                         <td>{{$product->quantity}}</td>
                         <td>
