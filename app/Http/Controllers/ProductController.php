@@ -39,6 +39,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|min:5',
+            'price' => 'required',
+            'quantity' => 'required'
+        ], [
+            'name.required' => 'اسم المنتج مطلوب',
+            'price.required' => 'ادخل السعر',
+            'quantity.required' => 'ادخل الكمية',
+            'min' => 'يجب الا يقل الحقل عن 5 احرف '
+        ]);
+
         $product = new Product;
 
         $product->name = $request->name;
@@ -85,6 +96,17 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'name' => 'required|min:5',
+            'price' => 'required',
+            'quantity' => 'required'
+        ], [
+            'name.required' => 'اسم المنتج مطلوب',
+            'price.required' => 'ادخل السعر',
+            'quantity.required' => 'ادخل الكمية',
+            'min' => 'يجب الا يقل الحقل عن 5 احرف '
+        ]);
+        
         $product = Product::find($id);
 
         $product->name = $request->name;
