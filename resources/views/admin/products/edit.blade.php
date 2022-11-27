@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
 <div class="py-3">
-    <form action="{{url('products/update/'.$product->id)}}" method="post">
+    <form action="{{url('admin/products/update/'.$product->id)}}" method="post">
         @csrf
         @method('patch')
         <div class="mb-3">
